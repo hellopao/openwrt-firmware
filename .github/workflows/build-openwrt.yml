@@ -77,6 +77,9 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a 
 
+    - name: ReInstall feeds
+      run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a 
+
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
